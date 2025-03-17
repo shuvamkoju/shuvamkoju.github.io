@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shuvam Kiran Koju | Personal Website</title>
+		<style>
+			/* Simple color scheme */
+			:root {
+				--main-color: #3498db;
+				--accent-color: #e74c3c;
+				--bg-color: #f5f5f5;
+				--text-color: #333;
+			}
+
+			/* Basic reset */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: Arial, sans-serif;
+			}
+
+			body {
+				background-color: var(--bg-color);
+				color: var(--text-color);
+				line-height: 1.6;
+			}
+
+			/* Container for content */
+			.container {
+				width: 90%;
+				max-width: 1000px;
+				margin: 0 auto;
+				padding: 0 15px;
+			}
+
+			/* Header styling */
+			header {
+				background-color: var(--main-color);
+				color: white;
+				padding: 1rem 0;
+				text-align: center;
+			}
+
+			/* Navigation */
+			nav {
+				background-color: #333;
+				padding: 0.5rem 0;
+			}
+
+			nav ul {
+				list-style: none;
+				display: flex;
+				justify-content: center;
+			}
+
+			nav li {
+				margin: 0 15px;
+			}
+
+			nav a {
+				color: white;
+				text-decoration: none;
+			}
+
+			nav a:hover {
+				color: var(--accent-color);
+			}
+
+			/* Sections */
+			section {
+				padding: 2rem 0;
+			}
+
+			section h2 {
+				text-align: center;
+				margin-bottom: 1.5rem;
+				color: var(--main-color);
+			}
+
+			/* About section */
+			.about-content {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 2rem;
+				align-items: center;
+			}
+
+			.profile-pic {
+				flex: 1;
+				min-width: 250px;
+				text-align: center;
+			}
+
+			.profile-pic img {
+				max-width: 100%;
+				border-radius: 50%;
+				border: 5px solid var(--main-color);
+			}
+
+			.about-text {
+				flex: 2;
+				min-width: 300px;
+			}
+
+			/* Projects section */
+			.projects-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+				gap: 1.5rem;
+			}
+
+			.project-card {
+				background: white;
+				border-radius: 5px;
+				overflow: hidden;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+			}
+
+			.project-card img {
+				width: 100%;
+				height: 150px;
+				object-fit: cover;
+			}
+
+			.project-content {
+				padding: 1rem;
+			}
+
+			/* Contact section */
+			.contact-form {
+				max-width: 500px;
+				margin: 0 auto;
+			}
+
+			.form-group {
+				margin-bottom: 1rem;
+			}
+
+			.form-group label {
+				display: block;
+				margin-bottom: 0.5rem;
+			}
+
+			.form-group input,
+			.form-group textarea {
+				width: 100%;
+				padding: 0.5rem;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+			}
+
+			.form-group textarea {
+				height: 150px;
+			}
+
+			.btn {
+				background-color: var(--main-color);
+				color: white;
+				border: none;
+				padding: 0.5rem 1rem;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+
+			.btn:hover {
+				background-color: #2980b9;
+			}
+
+			/* Footer */
+			footer {
+				background-color: #333;
+				color: white;
+				text-align: center;
+				padding: 1rem 0;
+				margin-top: 2rem;
+			}
+
+			.social-links {
+				margin: 1rem 0;
+			}
+
+			.social-links a {
+				display: inline-block;
+				margin: 0 10px;
+				color: white;
+				font-size: 1.2rem;
+			}
+
+			/* Simple toggle for dark mode */
+			.dark-mode-toggle {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				background: var(--main-color);
+				color: white;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				border: none;
+			}
+
+			/* Dark Mode */
+			body.dark-mode {
+				--bg-color: #222;
+				--text-color: #f5f5f5;
+				background-color: var(--bg-color);
+				color: var(--text-color);
+			}
+
+			body.dark-mode .project-card {
+				background: #333;
+			}
+
+			/* Simple animations */
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+
+			.fade-in {
+				animation: fadeIn 1s ease;
+			}
+			a:link {
+				color: #007bff; /* Default link color */
+				text-decoration: none; /* Optional: Removes underline */
+			}
+
+			a:visited {
+				color: #007bff; /* Keeps the color the same even after being visited */
+			}
+
+			a:hover {
+				color: #b30095; /* Color when hovered */
+			}
+
+			a:active {
+				color: #665300; /* Color when clicked */
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<h1>Shuvam Kiran Koju</h1>
+				<p>Grade 9 Student</p>
+			</div>
+		</header>
+
+		<nav>
+			<div class="container">
+				<ul>
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#projects">Projects</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<section id="about" class="fade-in">
+			<div class="container">
+				<h2>About Me</h2>
+				<div class="about-content">
+					<div class="profile-pic">
+						<img src="./shuvam.jpg" alt="Shuvam Koju" />
+					</div>
+					<div class="about-text">
+						<h3>Hello, I'm Shuvam!</h3>
+						<p>
+							I'm currently in grade 9 studying at Genuine
+							secondary School and this is my personal website.
+						</p>
+						<p>I'm interested in food and I enjoy eating.</p>
+						<p>My favorite subjects are maths and sports.</p>
+						<p>In the future, I want to be famous.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="projects" class="fade-in">
+			<div class="container">
+				<h2>My Projects</h2>
+				<a href="https://shuvamkoju.github.io/machas/">
+					<div class="projects-grid">
+						<div class="project-card">
+							<img src="./machas.jpg" alt="Project 1" />
+							<div class="project-content">
+								<h3>Machas</h3>
+								<p>it is an online fish store</p>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</section>
+
+		<footer>
+			<div class="container">
+				<div class="social-links">
+					<a href="https://www.facebook.com/shuvam.koju">Facebook</a>
+					<a href="https://www.instagram.com/shu.kju/">Instagram</a>
+					<a href="https://www.youtube.com/@officialcrate">YouTube</a>
+				</div>
+				<p>&copy; 2025 Shuvam Kiran Koju. All Rights Reserved.</p>
+			</div>
+		</footer>
+
+		<button class="dark-mode-toggle" id="darkModeToggle">🌓</button>
+
+		<script>
+			// Simple JavaScript for dark mode toggle
+			const darkModeToggle = document.getElementById('darkModeToggle');
+			darkModeToggle.addEventListener('click', () => {
+				document.body.classList.toggle('dark-mode');
+			});
+
+			// Smooth scrolling for navigation links
+			document.querySelectorAll('nav a').forEach((link) => {
+				link.addEventListener('click', function (e) {
+					e.preventDefault();
+					const targetId = this.getAttribute('href');
+					const targetSection = document.querySelector(targetId);
+					window.scrollTo({
+						top: targetSection.offsetTop,
+						behavior: 'smooth',
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
